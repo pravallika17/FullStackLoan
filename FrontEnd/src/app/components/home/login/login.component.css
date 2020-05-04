@@ -1,0 +1,363 @@
+/* styling for top navigation bar*/
+.topnav{
+  background-color: darkblue;  overflow: hidden;
+  margin-top: 0px;
+  height:55px;
+  width:100%;
+margin-bottom: 2px;
+
+}
+.topnav a {
+  float: left;
+  color: white;
+  margin-left: 33%;;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  border:1;
+  line-height: 0;
+}
+.container{
+  width:100%;
+  height:100%;
+  background-color:rgba(220,220,220,0.5) ;
+  
+}
+/* styling for whole box which contain form and image */
+#box{
+margin:4% 0 4% 4%;
+  width:90%;
+  height:100%;
+  border: 1px solid gray;
+  background-color: gainsboro;
+}
+/* styling for  box which contain form */
+#box1{
+  position:absolute;
+  margin:2% 0 2% 4%;
+  width:40%;
+  height:200px;
+  
+
+}
+/* styling for  box which containimage */
+#box2{
+  position: relative;
+  margin:2% 0 2% 4%;
+  width:42%;
+  height:200px;
+  left:50%;
+  border:1px solid gray;
+  background-image: url("/assets/images/hero_1.jpg");
+  background-size: cover;
+  
+}
+/* styling for label */
+label{
+  padding:5px 5px;
+width:30%;
+  margin-left:6%;
+  margin-top:2%;
+  color:black;
+  font-size: 15px;
+
+}
+/* styling for input box */
+input{
+  padding:5px 5px;
+  width: 42%;
+  margin:3% 0 0 3%;
+  
+
+}
+/* styling for button */
+button{
+  width:40%;
+  padding:5px 5px;
+  background-color: deeppink;
+  margin-left:40%;
+  color:darkblue;
+  font-size: 14px;
+  margin-top: 2px;
+}
+button:hover{
+  color:rgb(168,7,98);
+  background-color:darkblue ;
+}
+/* styling for copyright */
+#copyright{
+width:100%;
+height:40px;
+background-color: dimgray;
+color:black;
+}
+#copy{
+margin-left: 27%;
+width:100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+ .topnav{
+  background-color: darkblue;  overflow: hidden;
+  margin-top: 0px;
+  height:65px;
+  width:100%;
+
+
+}
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 22px 22px;
+  text-decoration: none;
+  font-size: 20px;
+  border:1;
+}
+
+form{
+  width:100%;
+ 
+}
+#div1{
+  width:100%;
+}
+#heading{
+  top:1cm;
+  font: size 50;
+  margin-left:45%;
+  color:darkblue;
+  vertical-align: center;
+}
+#hr{
+  background-color:darkblue;
+  margin-left:1cm;
+  margin-right:1cm;
+}
+.container{
+  margin-top:5%;
+  margin-left:1cm;
+
+  
+  
+}
+
+
+label{
+  margin-top:1%;
+  margin-left: 30%;
+  padding: 8px 8px 8px 0;
+  display: inline-block;
+  vertical-align: center;
+}
+input[type="text"],input[type="password"]
+{
+  margin-top:1%;
+  height:4%;
+  width:30%;
+  padding: 8px;
+  border-radius: 10px;
+  resize: vertical;
+  margin-left:10%;
+  border-color: cyan;
+  font-weight: 200;
+  color:black
+}
+i{
+  margin-right: 2px;;
+}
+button{
+  margin-top:1%;
+  height:15%;
+  width:21%;
+  padding: 8px;
+  border-radius: 10px;
+  resize: vertical;
+  background-color: deeppink;
+  color:darkblue;
+  margin-left:47%;
+}
+
+
+
+ a{
+    font-size: 24;
+    text-align: center;
+    color:white;
+    margin-left: 40%;
+ }
+ .format
+ {
+  background-image: linear-gradient(90deg, rgba(235,244,250,0.1)0%,rgba(235,244,250,0.6)40%) ;
+
+   width:100%;
+  background-color: gainsboro;
+   height:600px;
+   margin-right:50%;
+
+ }
+ form{
+   border:1;
+   border-color: black;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* form {
+    border: 3px solid lightgrey;
+    background-color: white;
+
+    
+  }
+  input[type=text], input[type=password] {
+    width: 100%;
+  padding: 8px;
+  border: 1px solid saddlebrown;
+  border-radius: 4px;
+  resize: vertical;
+  
+   
+  }
+  label{
+   padding: 8px 8px 8px 0;
+  display: inline-block;
+  margin-left:10%;
+  vertical-align: center;
+   
+  }
+  
+
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    margin-left:10%;
+    cursor: pointer;
+  
+    
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+ 
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  
+
+  
+
+  .format{
+      margin-left: 27%;
+      margin-right: 30%;
+      margin-top:6%;
+  }
+ 
+  .container {
+    padding: 16px;
+ 
+  }
+ 
+ 
+  span.psw {
+    float: right;
+    padding-top: 16px;
+    margin-right:10%;
+  }
+  
+ 
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+
+
+ 
+  
+
+  
+   */  

@@ -1,0 +1,59 @@
+
+<div class="image">
+    <div><img src="/assets/images/applyLoan.png" ></div>
+<div ><b style= "margin-left:50px">APPLY LOAN</b></div>
+</div>
+<div class="container">
+    <!-- form-->
+<form [formGroup]="applyForm">
+    <!--amount-->
+    <div class="form-group row ">
+        <label for="loanamount" ><b> Amount</b></label>
+        <input type="number"   placeholder="Enter Loan amount you wish to have" formControlName="loanamount" name="loanamount" required>
+        <!--errors on validations for amount - required  & min-->
+        <div  class="text-danger" *ngIf="submitted && this.applyForm.controls.loanamount.errors">
+            <div *ngIf="this.applyForm.controls.loanamount.errors.required">
+                Loan Amount is required
+            </div>
+            <div *ngIf="this.applyForm.controls.loanamount.errors?.min">
+                Loan Amount should be minimum of 10000..
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="form-group row">
+        <label for="name" ><b>Asset Value </b></label>
+        <input type="number" placeholder="Enter Asset value" formControlName="asset" name="asset" required>
+            <!--  errors on validations for amount - required  & min-->
+        <div  class="text-danger" *ngIf="submitted && this.applyForm.controls.asset.errors">
+            <div  *ngIf="applyForm.controls.asset.errors.required">
+                Asset value should be provided..
+            </div>
+            
+            <div *ngIf="applyForm.controls.asset.errors?.min">
+                Loan Amount should be minimum of 20000..
+            </div>
+
+        </div>
+       
+    </div>
+    <!-- error message will  be displayed from ts if loan account already exists-->
+    <div *ngIf="loan_account_exists" class="text-danger errors">
+       {{message_if_loan_exists}}
+    </div>
+
+    <!-- error message will  be displayed from ts if asset value is not 1.5 times greater than loan amount-->
+    <div *ngIf="asset_value_valid" class="text-danger errors">
+        {{message_if_asset_value_not_valid}}
+    </div>
+
+      <!-- error message will  be displayed from ts if deposited amount doesn't meet the condition -->
+      <div *ngIf="no_sufficient_deposit" class="text-danger errors">
+        {{message_if_not_valid_deposit}}<a routerLink="/profile/deposit"> &nbsp;&nbsp;&nbsp;Click Here to deposit</a>
+    </div>
+
+    <button type="submit" (click)="applyLoan()"><b>Apply</b></button>
+</form>
+</div>

@@ -1,0 +1,25 @@
+<div><img src="/assets/images/profile.png"></div>
+<div><b>MY PROFILE</b></div>
+<!-- table -->
+<table id="table1" border="1">
+    <!-- design for table cells-->
+    <col style="width:10cm">
+    <col style="width:10cm">
+    <col style="width:10cm">
+    <col style="width:10cm">
+
+    <tr>
+        <th>ACCOUNT NUMBER</th>
+        <th>ACCOUNT HOLDER NAME</th>
+        <th>PHONE NUMBER</th>
+        <th>EMAIL</th>
+    </tr>
+    <!-- printing data-->
+    <tr *ngIf="user">
+        <td><b>{{user.account_number}}</b></td>
+        <td><b>{{user.customer_name}}</b></td>
+        <td><b>{{user.phone_number}}</b></td>
+        <td><b>{{user.email}}</b></td>
+    </tr>
+
+</table>

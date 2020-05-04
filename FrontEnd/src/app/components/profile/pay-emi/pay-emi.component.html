@@ -1,0 +1,26 @@
+<div class="image">
+    <div><img src="/assets/images/payEmi.png" ></div>
+<div ><b >PAY EMI</b></div>
+</div>
+<!-- table-->
+<table id="table1"  border="1">
+
+
+    <tr *ngIf = user>
+        <th> EMI</th>
+        <td>{{user.emi}}</td>
+
+    </tr>
+
+</table>
+
+<div class="text-danger errors" *ngIf="loan_account_not_exists">
+    {{message_if_loan_exists}}
+</div>
+<div class="text-danger errors" *ngIf="calculate_emi">
+    {{message_if_calculated}}
+</div>
+<div class="text-danger errors" *ngIf="deposit_not_sufficient">
+    {{message_if_deposit_not_sufficient}}
+</div>
+<button (click)="payEmi()" type="submit">Pay EMI</button>

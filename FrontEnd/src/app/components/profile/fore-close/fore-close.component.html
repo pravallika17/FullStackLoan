@@ -1,0 +1,16 @@
+<!-- ForeClose icon container-->
+<div class="image">
+    <div><img src="/assets/images/foreclose.png" ></div>
+<div ><b style= "margin-left:50px">FORECLOSE</b></div>
+</div>
+
+<!-- container for foreclose button and error messages-->
+<div class="container">
+<button type="submit" (click)="foreClose()" ><b>Fore Close</b></button>
+
+<!-- Error message display when no loan is applied to foreclose-->
+<div *ngIf="loan_account_not_exists" class="text-danger errors">
+    {{message_if_loan_not_exists}}
+    
+</div>
+</div>

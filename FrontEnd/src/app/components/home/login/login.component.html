@@ -1,0 +1,69 @@
+<!-- top navigation for  heading-->
+<div class="topnav">
+  <div>
+    <a > ABC PERSONAL BANKING </a>
+  </div>
+</div>
+
+<!-- Specific identification for the component-->
+<div class="container col-lg-12">
+  <div>
+    <b style="color: darkblue; margin-left: 42%;padding:12px 12px">User Access</b>
+  </div>
+  <hr style="background-color: darkblue;margin-top:-0.3px;">
+
+
+<!-- consists both form and image-->
+  <div id="box">
+
+    <!--  for keeping our form-->
+      <div id="box1">
+        <form [formGroup]="loginForm">
+          <!--User Name Form-->
+          <div class="form-group row">
+            <label><b>User Name<sup><b class="text-danger" style="font-size:22px;">*</b></sup></b></label>
+            <input type="text" formControlName="userName">
+          </div>
+          
+          <!-- Password form-->
+          <div class="form-group row">
+            <label><b>Password</b><sup><b class="text-danger" style="font-size:22px;">*</b></sup></label>
+            <input type="password" formControlName="password">
+          </div>
+
+          <!-- error message display for invalid login credentials-->
+        <div class="text-danger" style="margin-top:-4px;font-size:14px; margin-left:4px;" *ngIf="invalid_Login_Fields">
+         {{error_message}}
+        </div>
+        
+        
+        
+
+    <button type="submit" (click)="login()"><b>Login</b></button>
+        </form>
+      </div>
+
+      <!-- for keeping image -->
+      <div id="box2">
+      </div>
+  </div>
+
+<!-- some security guidelines -->
+  <div>
+    <b style="color: darkblue;padding:12px 12px">Disclaimer</b>
+  </div>
+  <hr style="background-color: darkblue; margin-top: -1px;">
+<p style="font-size: 14px; text-align: justify;">Our Bank does not ask for the details of your Account/Pin/Password.
+  Therefore any one pretending to be asking you for information
+from the bank/technical team operate may be fradulent entities, So please
+be aware. You should know how to net transactions and if you are not familiar
+you may refrain from doing so. You may seek bank guidance in this regard.
+Bank is not responsible for online transactions going wrong. We shall also not 
+be responsible for wrong transactions and wanton disclousure of details by you.
+Viewing option and transactions option on the net are different.
+</p>
+
+<div style="height:150px;width:100%"></div>
+
+
+</div>

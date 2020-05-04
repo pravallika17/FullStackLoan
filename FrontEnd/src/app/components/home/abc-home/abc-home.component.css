@@ -1,0 +1,155 @@
+/* styling for top navigation */
+
+
+  .topnav2{
+    background-color: darkblue;
+    overflow: hidden;
+    position:relative;
+    
+  
+  }
+  .topnav2 a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 22px 22px;
+    text-decoration: none;
+    font-size: 20px;
+    border:1;
+  }
+  .topnav2 a:hover {
+    color:white;
+    background-color: deeppink;
+    width:30%
+   
+  }
+  
+  #nav2{
+    
+    margin-left: 18%;
+    margin-right: 18%;
+    display: flex;
+    justify-content: space-around;
+     
+   }
+ #content{
+   border:1px solid gray;
+   overflow-y:auto;
+  
+ }
+ li{
+  margin:4px 4px 0 4px;
+  list-style-type: disc;
+ }
+ u{margin-left: 0.8cm;}
+
+
+ 
+  
+
+  
+   
+/* styling for to navigation ends */
+
+
+/* styling for background image slider */
+.bg-img {
+  animation:animate 16s ease-in-out infinite;
+  min-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+@keyframes animate{
+  0%,100%{
+    background-image:url("/assets/images/slide_1.jpg");
+  }
+  25%{
+    background-image: url("/assets/images/slide_2.jpg");
+  }
+  50%{
+    background-image:url("/assets/images/slide_3.jpg");
+  }
+  75%{
+    background-image:url("/assets/images/slide_4.jpg");
+  }
+}/* styling for background-images slider ends */
+
+  
+/* Add styles to the container of login and signup links */
+.container-for-image-slide-and-choice {
+  position: absolute;
+  vertical-align:center;
+  left:65%;
+  top:15%;
+  bottom:20%;
+  margin: 20px;
+  max-width: 30%;
+  max-height:100%;
+  border:none;
+  opacity:0.9;
+  width:30%;
+  background:rgb(255,20,147,0.3);
+  background-size: cover;
+  height:50%;
+  color:white;
+}
+ 
+.container-for-image-slide-and-choice .heading{
+  top:10%;
+  text-align:center;
+  border: none;
+  width: 100%;
+  margin: 4px 4px;
+  vertical-align:center;
+  top:10%;
+  height:15%;
+  padding:16px 16px;
+  font-family: sans-serif;
+  background-color:rgb(168, 7, 98);
+  color:darkblue;
+   
+}/* Add styles to the container of login and signup links ends*/
+
+  
+  /* Set a style for the submit button */
+button {
+  background-color:rgba(168, 7, 98,0.8);
+  color: white;
+  padding: 16px 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin: 2px 2px;
+  border-radius:20px;
+  
+}
+button:hover{
+  background-color:darkblue;
+  opacity: 1;
+  color:white;
+}/* Setting a style for the submit button nds*/
+  
+  
+
+ /* styling for copyright for our bank */
+ #copyright{
+  width:100%;
+  height:40px;
+  background-color: dimgray;
+  color:black;
+  }
+  #copy{
+  margin-left: 27%;
+  width:100%;
+  }/* styling for copyright for our bank ends */
+  
+
+
+ 
+  
+
+  
+   
+  

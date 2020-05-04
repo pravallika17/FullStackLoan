@@ -1,0 +1,49 @@
+
+ .topnav2{
+    background-color: darkblue;
+    overflow: hidden;
+    position:relative;
+    
+  
+  }
+  .topnav2 a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 22px 22px;
+    text-decoration: none;
+    font-size: 20px;
+    border:1;
+  }
+  .topnav2 a:hover {
+    color:white;
+    background-color: deeppink;
+    width:30%
+   
+  }
+  
+  #nav2{
+    
+    margin-left: 18%;
+    margin-right: 18%;
+    display: flex;
+    justify-content: space-around;
+     
+   }
+   #content{
+     border:1px solid gray;
+     overflow-y:auto;
+    
+   }
+   li{
+    margin:4px 4px 0 4px;
+    list-style-type: disc;
+   }
+   u{margin-left: 0.8cm;}
+  
+  
+   
+    
+  
+    
+     

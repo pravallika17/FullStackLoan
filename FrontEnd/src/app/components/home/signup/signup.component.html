@@ -1,0 +1,164 @@
+<div class="topnav">
+  <div>
+    <a> ABC PERSONAL BANKING </a>
+  </div>
+</div>
+
+<div>
+  <div class="format">
+    <br>
+    <div id="heading"><b>User Access</b></div>
+    <hr id="hr">
+    <!-- SignUp Form -->
+    <form [formGroup]="signUpForm">
+      <div>
+        <div class="container">
+          <!-- Name -->
+          <div class="form-group row">
+            <label for="customer_name" style="color:black"><b>Name<sup style="color:red;font-size: larger; ">*</sup>
+              </b></label>
+
+            <input type="text" placeholder="Enter Full Name" class="form-control" formControlName="customer_name">
+            <!-- validating name for required and pattern-->
+            <div class="errors" *ngIf="submitted && signUpForm.controls.customer_name.errors ">
+              <div class="text-danger" *ngIf="signUpForm.controls.customer_name.errors.required">
+                <p>Name is required..</p>
+              </div>
+              <div class="text-danger" *ngIf="signUpForm.controls.customer_name.errors.pattern">
+                <p>Name should start with Capital letters and contain only alphabets..</p>
+              </div>
+            </div>
+            <!--validating ends-->
+          </div>
+          <!--Name ends-->
+
+          <!-- Email-->
+          <div class="form-group row">
+            <label for="email" style="color:black"><b>Email<sup style="color:red;font-size: larger; ">*</sup>
+              </b></label>
+
+            <input type="email" placeholder="Enter your email address" class="form-control" formControlName="email">
+            <!-- validating name for required and pattern-->
+            <div class="errors" *ngIf="submitted && signUpForm.controls.email.errors ">
+              <div class="text-danger" *ngIf="signUpForm.controls.email.errors.required">
+                <p>Email is Required...</p>
+              </div>
+              <div class="text-danger" *ngIf="signUpForm.controls.email.errors.email">
+                <p>Invalid Email Address...!</p>
+              </div>
+              <!--validating ends-->
+            </div>
+          </div>
+          <!--email ends-->
+
+          <!--Phone Number-->
+          <div class="form-group row">
+            <label for="phone_number" style="color:black"><b>Phone Number<sup style="color:red;font-size: larger; ">*</sup>
+              </b></label>
+
+            <input type="text" placeholder="Enter phone_number Number" class="form-control" formControlName="phone_number">
+            <!-- validating name for required and pattern-->
+            <div class="errors" *ngIf="submitted && signUpForm.controls.phone_number.errors">
+              <div class="text-danger" *ngIf="signUpForm.controls.phone_number.errors.required">
+                <p> Phone Number is required..</p>
+              </div>
+              <div class="text-danger" *ngIf="signUpForm.controls.phone_number.errors.pattern">
+                <p>Phone number must contain 10 digits and and start digit must be between 6-9</p>
+              </div>
+              <!--validating ends-->
+            </div>
+            <!-- displays if already username exists from ts file-->
+             <div class="text-danger" *ngIf="phone_number_exists">
+               <p> {{err_message_for_password}}</p>
+            </div>
+          </div>
+          <!-- Phone Number ends-->
+
+          <div class="form-group row">
+            <label for="deposit" style="color:black"><b>Deposit<sup style="color:red;font-size: larger; ">*</sup>
+              </b></label>
+
+            <input type="number" placeholder="Enter Deposit" class="form-control" formControlName="deposit">
+            <!-- validating name for required and pattern-->
+            <div class="errors" *ngIf="submitted && signUpForm.controls.deposit.errors">
+              <div class="text-danger" *ngIf="signUpForm.controls.deposit.errors.required">
+                <p>Deposit is required</p>
+              </div>
+              <div class="text-danger" *ngIf="signUpForm.controls.deposit.errors?.min">
+                <p>Deposit amount must be minimum than 1000</p>
+              </div>
+            </div>
+            <!--Validation ends-->
+          </div>
+
+
+          <!-- User Name-->
+          <div class="form-group row">
+            <label for="userName" style="color:black"><b>Username<sup style="color:red;font-size: larger; ">*</sup>
+              </b></label>
+
+            <input type="text" placeholder="Enter Username" class="form-control" formControlName="user_name">
+            <!-- validating name for required and pattern-->
+            <div class="errors" *ngIf="submitted && signUpForm.controls.user_name.errors">
+              <div class="text-danger" *ngIf="signUpForm.controls.user_name.errors.required">
+                <p>user_name is required</p>
+              </div>
+              <div class="text-danger" *ngIf="signUpForm.controls.user_name.errors.pattern">
+                <p>user_name must contain atleast 1 lower case, 1 upper case and 1 special character and length 6-10</p>
+              </div>
+            </div>
+            <!--Validation ends-->
+            <!-- displays if already user_name exists from ts file-->
+            <div class="text-danger" *ngIf="user_name_exists">
+              <p> {{err_message_for_username}}</p>
+            </div>
+          </div>
+          <!--User Name ends-->
+          <!--Password-->
+          <div class="form-group row">
+            <label for="password" style="color:black"><b>Password<sup style="color:red;font-size: larger; ">*</sup>
+              </b></label>
+
+            <input type="password" placeholder="Enter Password" class="form-control" formControlName="password">
+            <!-- validating name for required and pattern-->
+            <div class="errors" *ngIf="submitted && signUpForm.controls.password.errors ">
+              <div class="text-danger" *ngIf=" signUpForm.controls.password.errors.required">
+                <p>Password is required</p>
+              </div>
+              <div class="text-danger" *ngIf="signUpForm.controls.password.errors.pattern">
+                <p>Password must contain atleast 1 lower case, and 1 special character and length 6-10</p>
+              </div>
+            </div>
+
+          </div>
+          <!--Password ends-->
+
+          <!-- Repeat password-->
+          <div class="form-group row">
+            <label for="pwdrept" style="color:black"><b>Confirm Password<sup
+                  style="color:red;font-size: larger; ">*</sup> </b></label>
+
+            <input type="password" placeholder=" Repeat your Password" class="form-control" formControlName="pwdrept">
+
+            <!-- displays when password doesn't match repeated password"-->
+            <div class="text-danger" *ngIf="submitted && password_mismatch">
+              Password Missmatch
+            </div>
+
+
+
+          </div>
+
+          <br />
+          <button type="button" (click)="signUp()">Sign Up</button>
+        </div>
+      </div>
+    </form><!-- signUp Form ends-->
+    <div style="height:100px;width:100%"></div>
+
+
+  </div>
+
+
+
+</div>

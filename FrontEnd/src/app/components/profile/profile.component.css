@@ -1,0 +1,133 @@
+/* styling for whole componrnt */
+* {
+  font-family: sans-serif;
+}
+
+/* styling for sidebar for links */
+#sidebar {
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  top: 130px;
+  background: gainsboro;
+  left:-240px;
+  transition: all 500ms linear;
+}
+ 
+/* styling for side bar when user asked to open the side bar */
+#sidebar.active {
+  left: 0px;
+}
+/* styling for sidebar when user asked to close the sidebar */
+#sidebar.notactive{
+  left:-260px;
+}
+#sidebar ul li{
+  list-style:none;
+
+}
+/* styling for button links inside the sidebar */
+#sidebar ul li button {
+  color: white;
+  background-color: darkblue;
+  padding: 15px 10px;
+  width:240px;
+  border-radius: 12px;
+  margin-left:-40px;
+
+}
+
+/* styling for button links inside the sidebar on hover*/
+#sidebar ul li button:hover{
+  background-color: rgb(197,31,99);}
+
+#sidebar ul li button :not(.active){
+  background-color: darkblue;
+}
+
+/* styling for toggle button positioning*/
+.toggle-btn {
+  position: absolute;
+  left: 4px;
+  top:130px;
+}
+
+/*styling  toggle button */
+.toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: deeppink;
+  margin: 5px 0px;
+}
+
+/* styling for router-outlet for child components */
+#content {
+  left:0px;
+  position: absolute;
+  top:160px;
+  transition: all 500ms linear;
+  
+
+}
+
+#content.yes{
+  left:0;
+  position: absolute;
+  top:160px;
+}
+#content.no{
+  left: 240px;
+  position: absolute;
+  top:160px;
+}
+/* image styling */
+img{
+  position:fixed;
+  top:-8px;
+  height:125px;
+  width:240px;
+ 
+}
+.span1{
+  display: block;
+  width:100%;
+  height:70px;
+  background-color:rgb(197,31,99);
+
+ }
+.span2{
+display: block;
+  width:100%;
+  height:5px;
+  background-color:white;
+}
+.span3{
+display: block;
+  width:100%;
+  height:40px;
+  background-color:darkblue;
+
+}
+#x{
+  font-size: 27px;
+  margin-left:165px;
+  padding: 3px 5px;
+  color:rgb(197,31,99);
+
+  
+}
+#copyright{
+  position: fixed;
+  width:100%;
+  height:50px;
+  background-color: dimgray;
+  color:black;
+  margin-top:55%;
+  }
+  #copy{
+ 
+  width:100%;
+  text-align: center;
+ line-height: 3;
+  }

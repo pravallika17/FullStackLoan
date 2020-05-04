@@ -1,0 +1,27 @@
+<div class="image">
+    <div><img src="/assets/images/calculateEmi.png"></div>
+    <div><b style="margin-left:50px">DEPOSIT</b></div>
+
+    <div class="container">
+        <form [formGroup]="depositForm">
+
+            <div class="form-group row">
+                <!-- tenure-->
+                <label for="deposit"><b>Deposit </b></label>
+                <input type="number" placeholder="Enter Deposit" formControlName="deposit" name="deposit">
+                <!-- errors on validation of  tenure - required and minimum months-->
+                <div class="text-danger" *ngIf="submitted && depositForm.controls.deposit.errors">
+                    <div *ngIf="depositForm.controls.deposit.errors.required">
+                        Deposit amount should be provided
+                    </div>
+                    <div *ngIf="depositForm.controls.deposit.errors?.min">
+                        Deposit should not be negative
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    
+
+    <button type="submit" (click)="deposit()"><b>Deposit</b></button>
+</div>

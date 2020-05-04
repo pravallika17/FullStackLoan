@@ -1,0 +1,45 @@
+<!-- top navigation bar-->
+<div id="img">
+  <span>
+    <img src="/assets/images/bank_name.png">
+    <!-- designing solor fillers on top navigation-->
+    <span class="span1"></span>
+    <span class="span2"></span>
+    <span class="span3"></span>
+  </span>
+</div>
+<div>
+  <!-- designing top navigation-->
+  <div class="toggle-btn" (click)="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!--sidebar links-->
+  <div id="sidebar">
+    <ul><b (click)="toggleSidebar()" id="x">x</b>
+
+
+      <li><button class="active" routerLink="/profile/userprofile">My profile</button></li>
+      <li><button class="active" routerLink="/profile/showBal">Show Balance</button></li>
+      <li><button class="active" routerLink="/profile/deposit">Deposit</button></li>
+      <li><button class="active" routerLink="/profile/apply">Apply Loan</button></li>
+      <li><button class="active" routerLink="/profile/calcEmi">Calculate EMI</button></li>
+      
+      <li><button class="active" routerLink="/profile/payEmi">Pay EMI</button></li>
+      <li><button class="active" routerLink="/profile/foreClose">Fore Close</button></li>
+      
+      <!-- <li><button class="active" routerLink="/profile/edit">Edit Profile</button></li> -->
+      <li><button class="active" routerLink="/profile/print">Print Transactions</button></li>
+      <li><button class="active" class="text-danger" (click)="logout()">LogOut</button></li>
+    </ul>
+  </div>
+
+
+  <!-- router-outlet for links of user-->
+  <div id="content" class="toggleSidebar">
+    <router-outlet></router-outlet>
+
+  </div>
+</div>

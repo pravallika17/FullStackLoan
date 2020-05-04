@@ -1,0 +1,39 @@
+/*styling for table */
+#table1 {
+    margin-left: 5%;
+    margin-top:6%;
+   
+  }
+  
+  th{
+    text-align: center;
+    height:1.2cm;
+    width:14cm;
+    border-radius: 14px;
+    color:darkblue
+    
+  }
+  td{
+    height:1.2cm;
+    width:14cm;
+    
+  }
+  td  b{
+    
+    color:black
+  }
+  button:hover{
+    background-color:darkblue;
+}
+/* styling for image*/
+img{
+  margin-left:44%;
+  width:150px;
+  height:150px;
+}
+b{
+  margin-left:46%;
+  margin-left:45%;
+  color:rgb(197,31,99);
+  text-align:center;
+}

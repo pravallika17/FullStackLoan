@@ -1,0 +1,51 @@
+/*styling  for table */
+#table1 {
+    margin-left: 12%;
+    margin-top:8%;
+   
+  }
+  th{
+   text-align:center;
+    height:1.2cm;
+    width:10cm;
+    border-radius: 14px;
+    color:darkblue
+    
+  }
+  td{
+    height:1.2cm;
+    width:10cm;
+    
+  }
+  td  b{
+    color:black
+  }
+
+  button{
+    margin-top:4%;
+    height:15%;
+    width:19%;
+    padding: 6px;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: deeppink;
+    color:darkblue;
+    margin-left:37%;
+  }
+  button:hover{
+    background-color:darkblue;
+  }
+  
+  button:hover{
+    background-color:darkblue;
+
+}
+img{
+  margin-left:44%;
+  width:150px;
+  height:150px;
+}
+b{
+  margin-left:46%;
+  color:rgb(197,31,99);
+}

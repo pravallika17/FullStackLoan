@@ -1,0 +1,21 @@
+<div><img src="/assets/images/balance.png"></div>
+<div><b>BALANCE</b></div>
+<!--table-->
+<table id="table1" border="1">
+ 
+    <tr>
+        <th>ACCOUNT NUMBER</th>
+        <th>ACCOUNT HOLDER NAME</th>
+        <th>LOAN BALANCE</th>
+        <th>ACCOUNT BALANCE</th>
+    </tr>
+    <!-- details-->
+    <tr *ngIf=user>
+        <td><b>{{user.account_number}}</b></td>
+        <td><b>{{user.customer_name}}</b></td>
+        <td><b>{{user.loan_amount}}</b></td>
+        <td><b>{{user.deposit}}</b></td>
+
+    </tr>
+
+</table>

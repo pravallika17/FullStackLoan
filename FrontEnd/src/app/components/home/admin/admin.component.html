@@ -1,0 +1,30 @@
+<div class="topnav">
+    <div>
+      <a > ABC PERSONAL BANKING </a>
+    </div>
+  </div>
+  
+  <!-- Specific identification for the component-->
+  <div class="container col-lg-12">
+    <div>
+      <b style="color: darkblue; margin-left: 42%;padding:12px 12px">Admin Access</b>
+    </div>
+    <hr style="background-color: darkblue;margin-top:-0.3px;">
+
+<div id= "form">    
+     <form [formGroup]="adminForm">
+    <!--User Name Form-->
+    <div class="form-group row">
+      <label><b>User Name<sup><b class="text-danger" style="font-size:22px;">*</b></sup></b></label>
+      <input type="text" formControlName="userName">
+    </div>
+    
+    <!-- Password form-->
+    <div class="form-group row">
+      <label><b>Password</b><sup><b class="text-danger" style="font-size:22px;">*</b></sup></label>
+      <input type="password" formControlName="password">
+    </div>
+
+    <button (click)="admin()">ADMIN</button>
+</form>
+</div>

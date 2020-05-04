@@ -1,0 +1,54 @@
+/* design for table */
+table{
+   margin-left:10%;
+    margin-top:5%; 
+   
+  }
+  
+  th{
+    margin-left: -2cm;
+    height:1.2cm;
+    width:7cm;
+    color:darkblue;
+    text-align:center;
+    
+  }
+
+ td{
+   width:7cm;
+   height:1.2cm;
+   text-align:center;
+ }
+  td b{
+  
+    color:black
+  }
+  #search{
+    margin-left: 10%;
+    font-size:22px;
+  }
+input{
+  width:300px
+}
+
+img{
+  margin-left:44%;
+  width:150px;
+  height:150px;
+}
+b{
+  margin-left:45%;
+ 
+ 
+
+}
+a{
+ margin-left: 4px;
+ color:darkblue;
+ background-color:deeppink;
+ padding:10px 27px;
+
+}
+button{
+  margin-top:20px;
+}

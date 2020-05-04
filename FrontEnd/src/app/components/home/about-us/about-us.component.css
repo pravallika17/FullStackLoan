@@ -1,0 +1,59 @@
+/* styling for top navigation */
+
+
+.topnav2{
+    background-color: darkblue;
+    overflow: hidden;
+    position:relative;
+    
+  
+  }
+  .topnav2 a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 22px 22px;
+    text-decoration: none;
+    font-size: 20px;
+    border:1;
+  }
+  .topnav2 a:hover {
+    color:white;
+    background-color: deeppink;
+    width:30%
+   
+  }
+  
+  #nav2{
+    
+    margin-left: 18%;
+    margin-right: 18%;
+    display: flex;
+    justify-content: space-around;
+     
+   }
+   .card{
+    border-radius: 50%;
+    border: 2px solid grey;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    position: flex;
+    transform-style: preserve-3d;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+
+.back{
+    margin-top: 50px;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    display: none;
+    position: relative;
+}
+
+.card:hover .back{
+    display: block;
+}

@@ -1,0 +1,35 @@
+<div><img src="/assets/images/printTrans.png" ></div>
+<div ><b  >List of users</b></div>
+<div id=search>
+<label><b>Search </b></label>
+<input style="margin-left: 2cm;" type="text" class="form-control" [(ngModel)]="searchText" >
+<br/>
+<h6>Searching for {{ searchText }}</h6>
+</div>
+<!-- table for pprinting transactions-->
+    
+<ng-container *ngIf = "(users| search: searchText) as result" ><table border = "1" >
+
+        <tr>
+            <th>NAME</th>
+            <th>ACCOUNT NUMBER</th>
+            <th>PHONE NUMBER</th>
+            <th>USERNAME</th>
+            
+        </tr>
+        
+       
+        <!-- getting user data from ts file-->
+        <tr  *ngFor="let obj of result">
+            <td><b>{{obj.customer_name}}</b></td>
+            <td><b>{{obj.account_number}}</b></td>
+            <td><b>{{obj.phone_number}}</b></td>
+            <td><b>{{obj.user_name}}</b></td>
+            <td><a (click)="deleteUser(obj.user_name)">DELETE</a></td>
+        </tr>
+   
+        
+    </table>
+    <button style="margin-left:45%" class="btn btn-danger" (click)="logout()">LOGOUT</button>
+</ng-container>
+

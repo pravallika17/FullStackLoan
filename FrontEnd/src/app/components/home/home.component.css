@@ -1,0 +1,68 @@
+/* top navigation bar */
+.topnav1 {
+    background-color: white;
+    overflow: hidden;
+    height:100px;
+    
+  }
+
+  .topnav1 a {
+    float: left;
+    color: deeppink;
+    text-align: center;
+    padding: 22px 22px;
+    text-decoration: none;
+    font-size: 18px;
+    border:1;
+  }
+
+  .topnav1 a:hover {
+    color:darkblue;
+  }
+  
+ /* for logo of bank */
+ #nav1{
+   float: left;
+   position:absolute;
+
+
+ }
+ 
+ /* for links about our bank */
+#nav2{
+  float:right;
+  position: relative;
+  
+}
+b{
+    background-color: darkblue;
+    color:white;
+    font-size: 24px;
+}
+ img{
+  position:relative;
+  top:-8px;
+  height:125px;
+  width:240px;
+ 
+ }
+
+
+
+  /* .topnav a.active {
+    background-color;
+    color:  slateblue;
+  } */
+
+
+  #copyright{
+    width:100%;
+    height:40px;
+    background-color: dimgray;
+    color:black;
+    }
+    #copy{
+    margin-left: 27%;
+    width:100%;
+    
+    }

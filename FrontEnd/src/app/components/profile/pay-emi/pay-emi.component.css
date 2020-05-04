@@ -1,0 +1,47 @@
+table{
+ margin-top:20px;
+ margin-left: 450px;
+
+}
+th{
+  width:5cm;
+  text-align:center;
+  color:darkblue;
+}
+td{
+  width:5cm;
+  text-align:center;
+}
+
+
+button{
+  position:fixed;
+  margin-top:4%;
+  
+  padding: 6px;
+  border-radius: 10px;
+  resize: vertical;
+  background-color: deeppink;
+  color:darkblue;
+  margin-left:550px;
+}
+button:hover{
+  background-color:darkblue;
+  color:deeppink;
+}
+
+  .image{
+    margin-left: 500px;
+  }
+  .errors{
+    border:1px solid red;
+    margin:15px 0  15px 0;
+    text-align:center;
+    width:300px;
+    margin-left:63%
+  }
+  b{
+    margin-left:50px;
+    margin-top: 2px; 
+    color:rgb(197,31,99)
+  }

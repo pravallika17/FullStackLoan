@@ -1,0 +1,35 @@
+/* styling for fore Close image */
+.image{
+  margin-left: 500px;
+ 
+}/* styling for foreClose image ends */
+
+
+/* styling for container of forclose button and images */
+.container{
+  margin-top:20px;
+  margin-left: 500px;
+ 
+ }
+ 
+ /* styling for foreClose Button */
+ button{
+   padding: 15px;
+   border-radius: 10px;
+   resize: vertical;
+   background-color: deeppink;
+   color:darkblue;
+   
+ }
+ /*styling for foreclose button on hover */
+ button:hover{
+   background-color:darkblue;
+   color:deeppink;
+ }
+ /* styling for container of foreclose button and errors ends */
+ 
+  .errors{
+    border:1px solid red;
+    margin:15px 0  15px 0;
+    width:200px;
+  }

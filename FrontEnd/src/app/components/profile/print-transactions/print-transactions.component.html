@@ -1,0 +1,30 @@
+<div><img src="/assets/images/printTrans.png" ></div>
+<div ><b  >TRANSACTIONS</b></div>
+
+<!-- table for pprinting transactions-->
+    <table border="1">
+
+        <tr>
+            <th>DATE</th>
+            <th>TRANSACTION ID</th>
+            <th>OPERATON</th>
+            <th>AMOUNT</th>
+            <th>TIME</th>
+            
+        </tr>
+        
+        <!-- getting user data from ts file-->
+        <tr  *ngFor="let obj of trans">
+            <td><b>{{obj.transaction_date}}</b></td>
+            <td><b>TNID000{{obj.transaction_id}}</b></td>
+            <td><b>{{obj.operation}}</b></td>
+            <td><b>{{obj.amount}}</b></td>
+            <td><b>{{obj.transaction_time}}</b></td>
+           
+        </tr>
+        <tr class="text-danger" *ngIf="res">
+            Sorry!!! No Transactions available
+        </tr>
+       
+    </table>
+

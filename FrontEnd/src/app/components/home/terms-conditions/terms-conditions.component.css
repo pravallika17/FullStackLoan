@@ -1,0 +1,34 @@
+/* styling for top navigation */
+
+
+.topnav2{
+    background-color: darkblue;
+    overflow: hidden;
+    position:relative;
+    
+  
+  }
+  .topnav2 a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 22px 22px;
+    text-decoration: none;
+    font-size: 20px;
+    border:1;
+  }
+  .topnav2 a:hover {
+    color:white;
+    background-color: deeppink;
+    width:30%
+   
+  }
+  
+  #nav2{
+    
+    margin-left: 18%;
+    margin-right: 18%;
+    display: flex;
+    justify-content: space-around;
+     
+   }

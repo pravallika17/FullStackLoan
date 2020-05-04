@@ -1,0 +1,51 @@
+.container{
+  position:fixed;
+  left:30%;
+  top:500px;
+  }
+  .image{
+    position: fixed;
+    left:40%;
+    height:40%;
+  }
+  label{
+  width:100%;
+  position:absolute;
+  padding:6px ;
+  vertical-align:center;
+  left:0px;
+  }
+  input{
+    position: relative;
+    margin-top:-8px;
+   margin-left:20%;
+   padding :6px;
+   vertical-align: center;
+   border-radius: 14px;
+   border-color:cyan;
+   width:8cm;
+   
+  }
+  button{
+  margin-left:27%;
+  width:15%;
+  background-color: deeppink;
+  border-radius: 14px;
+  padding:8px;
+  color:darkblue
+  
+  }
+  button:hover{
+    background-color:darkblue;
+    color:deeppink;
+    
+  }
+  .errors{
+    margin-left:25%;
+    border:1px solid red;
+    text-align:center;
+    width:200px;
+    margin-bottom:20px;
+    padding:4px 0 4px 0;
+  }
+  
