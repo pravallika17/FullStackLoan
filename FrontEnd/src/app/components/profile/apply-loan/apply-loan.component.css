@@ -1,13 +1,22 @@
+
+
+/* styling for whole container */
 .container{
 position:fixed;
 left:30%;
 top:500px;
 }
+
+
+
+/* styling for image */
 .image{
   position: fixed;
   left:40%;
   height:40%;
 }
+
+/*styling for label */
 label{
 width:100%;
 position:absolute;
@@ -15,9 +24,11 @@ padding:6px ;
 vertical-align:center;
 left:0px;
 }
+
+/* styling for input box */
 input{
-  position: relative;
-  margin-top:-8px;
+position: relative;
+ margin-top:-8px;
  margin-left:20%;
  padding :6px;
  vertical-align: center;
@@ -26,6 +37,9 @@ input{
  width:8cm;
  
 }
+
+
+/* styling for button */
 button{
 margin-left:27%;
 width:15%;
@@ -35,10 +49,13 @@ padding:8px;
 color:darkblue
 
 }
+/* styling for button on hover */
 button:hover{
   background-color:darkblue;
   color:deeppink;
 }
+
+/* styling for errors */
 .errors{
   border:1px solid red;
   margin:15px 0 15px 4px;

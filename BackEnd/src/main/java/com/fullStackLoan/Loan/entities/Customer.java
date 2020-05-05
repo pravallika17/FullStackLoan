@@ -4,6 +4,7 @@ package com.fullStackLoan.Loan.entities;
 import java.util.List;
 
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,10 +14,9 @@ import javax.persistence.OneToMany;
 import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Customer {
 	
 	@Id

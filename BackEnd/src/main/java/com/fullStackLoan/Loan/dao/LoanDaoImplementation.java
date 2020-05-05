@@ -2,14 +2,13 @@ package com.fullStackLoan.Loan.dao;
 
 import java.util.Collections;
 
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import com.fullStackLoan.Loan.entities.Customer;
@@ -25,36 +24,52 @@ static int account_no =1010110201;
 @Autowired
 EntityManager entityManager;
 
-//get all customers
+
+	/*
+	 * (non-Javadoc)
+	 * @see com.fullStackLoan.Loan.dao.LoanDao#getAll()
+	 * Method Name : getAll()
+	 * Return Type : List<Customer>
+	 * Description : get all the customers from data base using Hibernate Queries
+	 */
 	@Override
 	public List<Customer> getAll() {
-		String cmd="select customer from Customer customer";
-		TypedQuery<Customer> q1=entityManager.createQuery(cmd,Customer.class);
-		List<Customer> users=q1.getResultList();
+		String cmd = "select customer from Customer customer";
+		TypedQuery<Customer> q1 = entityManager.createQuery(cmd,Customer.class);
+		List<Customer> users = q1.getResultList();
 		return users;
 		
 	}
 	
-	//create a new account
+	
+	
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.fullStackLoan.Loan.dao.LoanDao#addAccount(com.fullStackLoan.Loan.entities.Customer)
+	 * Method Name : addAccount()
+	 * Description : create a new account using Hibernate Queries and persist is used to save into data base
+	 */
 	@Override
 	public Customer addAccount(Customer customer) {
+		
 		//count of the existing accounts  to assign account number
 		String command = "SELECT count(customer.account_number) from Customer customer";
 		TypedQuery<Long> query1 = entityManager.createQuery(command, Long.class);
-		Long count=query1.getSingleResult();
+		Long count = query1.getSingleResult();
 
 		//if count is  greater than zero increment by 1 to the maximum of account numbers
-		if(count>0) {
-		String command2 ="select max(customer.account_number) from Customer customer";
-		TypedQuery<Integer> query2=entityManager.createQuery(command2,Integer.class);
-		int account_number =query2.getSingleResult();
+		if(count > 0) {
+		String command2 = "select max(customer.account_number) from Customer customer";
+		TypedQuery <Integer> query2 = entityManager.createQuery(command2,Integer.class);
+		int account_number = query2.getSingleResult();
 		customer.setAccount_number( account_number +1);
 		System.out.println(account_number);
 		
 		}
 		else
 		{
-			customer.setAccount_number(account_no);
+			customer.setAccount_number (account_no);
 
 			
 		}
@@ -69,9 +84,9 @@ EntityManager entityManager;
 	
 	@Override
 	//applying loan
-	public int applyLoan(Customer customer) {
+	public int applyLoan (Customer customer) {
 		 //merging the data into database of loan amount and asset value
-		 entityManager.merge(customer);	
+		 entityManager.merge (customer);	
 		 return (int) customer.getLoan_amount();	
 	
 	}
@@ -81,18 +96,18 @@ EntityManager entityManager;
 	//show balance
 	public int showBalance(String userName) {
 		//get the customer of specific userName
-		Customer customer=getCustomer(userName);
-		entityManager.find(Customer.class, customer.getAccount_number());
+		Customer customer = getCustomer(userName);
+		entityManager.find (Customer.class, customer.getAccount_number());
 		 return (int) customer.getLoan_amount();
 	}
 	
 	//get all the customer details of a specific user
 	public Customer getCustomer(String username)
 	{
-		String command="select customer_details from Customer customer_details where customer_details.user_name=:user";
-		TypedQuery<Customer> query=entityManager.createQuery(command,Customer.class);
+		String command = "select customer_details from Customer customer_details where customer_details.user_name=:user";
+		TypedQuery<Customer> query = entityManager.createQuery(command,Customer.class);
 		query.setParameter("user", username);
-		Customer customer=query.getSingleResult();
+		Customer customer = query.getSingleResult();
 		return customer;
 	}
 
@@ -126,9 +141,9 @@ EntityManager entityManager;
 	@Override
 	//prints all the transactions of a particular user
 	public List<Passbook> printTransactions(String userName) {
-		Customer customer=getCustomer(userName);
-		List<Passbook> list=customer.getTransactions();
-		Collections.reverse(list);
+		Customer customer = getCustomer(userName);
+		List<Passbook> list = customer.getTransactions();
+		Collections.reverse (list);
 		return list;
 
 		
@@ -140,12 +155,12 @@ EntityManager entityManager;
 	public boolean checkUser(String userName, String password) throws  InvalidLoginCredentialsException{
 			try{
 				//command for selecting user name and password from the data
-				String cmd="select customer_details from Customer customer_details where customer_details.user_name=:user and customer_details.password=:pwd";
-				TypedQuery<Customer> query=entityManager.createQuery(cmd,Customer.class);
+				String cmd = "select customer_details from Customer customer_details where customer_details.user_name=:user and customer_details.password=:pwd";
+				TypedQuery<Customer> query = entityManager.createQuery(cmd,Customer.class);
 
 				//setting the parameters in the command with given user name and password
-				query.setParameter("user",userName);
-				query.setParameter("pwd", password);
+				query.setParameter ("user",userName);
+				query.setParameter ("pwd", password);
 				query.getSingleResult();
 				return true;
 			}
@@ -161,7 +176,7 @@ EntityManager entityManager;
 		
 		String command = "SELECT customer.user_name FROM Customer customer";
 		TypedQuery<String> query = entityManager.createQuery(command, String.class);
-		List<String> list=query.getResultList();
+		List<String> list = query.getResultList();
 		if(list.contains(userName)) {
 			 throw new UserNameAlreadyExistsException("User Name already exists");		
 		}
@@ -173,7 +188,7 @@ EntityManager entityManager;
 	public boolean phNoExists(String phoneNo) throws PhoneNumberExistsException {
 		String command = "SELECT customer.phone_number FROM Customer customer";
 		TypedQuery<String> query = entityManager.createQuery(command, String.class);
-		List<String> list=query.getResultList();
+		List<String> list = query.getResultList();
 		if(list.contains(phoneNo)) {
 			 throw new PhoneNumberExistsException("Phone Number already exists");		
 		}
@@ -183,7 +198,7 @@ EntityManager entityManager;
 	
 	//To generate transaction id for every transaction 	
 		public int generateTransactionId() {
-			int transaction_id=1;
+			int transaction_id = 1;
 			String command1 = "SELECT count(passbook.transaction_id) from Passbook passbook";
 			TypedQuery<Long> query1 = entityManager.createQuery( command1 , Long.class);
 			Long count=query1.getSingleResult();
@@ -213,12 +228,7 @@ EntityManager entityManager;
 			
 		}
 
-		@Override
-		public double editAccount( Customer customer) {
-			 entityManager.merge(customer);
-			 return 1;
-			
-		}
+	
 
 	
 

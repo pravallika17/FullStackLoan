@@ -8,36 +8,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  submitted:boolean=false;
+  submitted: boolean = false;
   adminForm: FormGroup;
-  invalid_login:boolean=false;
-constructor(private router:Router, private formBuilder:FormBuilder) { }
+  invalid_login: boolean = false;
+  constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-this.adminForm= this.formBuilder.group({
-  userName :['',Validators.pattern],
-  password:['',Validators.pattern]
-  
-})
+    this.adminForm = this.formBuilder.group({
+      userName: ['', Validators.pattern],
+      password: ['', Validators.pattern]
+
+    })
 
   }
 
 
 
-admin()
-{
-this.submitted=true;
-if(this.adminForm.invalid)
-  return;
-if(this.adminForm.controls.userName.value == "admin@12" && this.adminForm.controls.password.value== "admin@12"){
-  localStorage.userName = "admin@12";
-    this.router.navigate(['adminpage']);
- this.invalid_login=true;
-}
-else
-  return;
+  admin() {
+    this.submitted = true;
+    if (this.adminForm.invalid)
+      return;
+    if (this.adminForm.controls.userName.value == "admin@12" && this.adminForm.controls.password.value == "admin@12") {
+      localStorage.userName = "admin@12";
+      this.router.navigate(['adminpage']);
+      this.invalid_login = true;
+    }
+    else
+      return;
 
 
-}
+  }
 
 }

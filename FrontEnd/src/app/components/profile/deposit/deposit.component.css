@@ -1,14 +1,17 @@
-
+/* container for whole page */
 .container{
     position:fixed;
     left:30%;
     top:500px;
     }
+
+    /* styling for whole image */
     .image{
       position: fixed;
       left:40%;
       height:40%;
     }
+    /* styling for label */
     label{
     width:100%;
     position:absolute;
@@ -16,6 +19,8 @@
     vertical-align:center;
     left:0px;
     }
+
+    /* styling for input textbox */
     input{
       position: relative;
       margin-top:-8px;
@@ -27,6 +32,8 @@
      width:8cm;
      
     }
+
+    /* styling for button */
     button{
     margin-left:27%;
     width:15%;
@@ -36,11 +43,14 @@
     color:darkblue
     
     }
+    /* styling for button on hover */
     button:hover{
       background-color:darkblue;
       color:deeppink;
       
     }
+
+    /* styling for errors */
     .errors{
       margin-left:25%;
       border:1px solid red;

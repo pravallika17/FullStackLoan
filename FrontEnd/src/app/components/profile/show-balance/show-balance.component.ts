@@ -10,15 +10,24 @@ import { Customer, LoggingService } from 'src/assets/model';
   providers: [LoggingService]
 })
 export class ShowBalanceComponent implements OnInit {
+
+
   constructor(private service:UserService,private router:Router, private loggingService:LoggingService) { }
 
   user: Customer;
+
+
+  /*
+    if local storage contains a username we my continue
+    to 
+
+  */
   ngOnInit() {
     
     if(localStorage.userName!=null){
       this.showDetails();
     }
-     //if user not exists in localstroage redirects to login page
+     
     else{
       this.router.navigate(['/home/login']);
     }

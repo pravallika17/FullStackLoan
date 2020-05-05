@@ -45,5 +45,4 @@ public interface LoanService {
 	
 	public double deleteAccount(String userName);
 	
-	public double editAccount(  Customer customer);
 }

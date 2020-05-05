@@ -30,8 +30,6 @@ public interface LoanDao {
 	public boolean userNameExists(String userName) throws  UserNameAlreadyExistsException ;
 	
 	public double deleteAccount(String userName);
-	
-	public double editAccount(  Customer customer);
 
 	List<Passbook> printTransactions(String userName) ;
 

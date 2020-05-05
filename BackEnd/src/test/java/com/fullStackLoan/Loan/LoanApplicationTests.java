@@ -85,10 +85,8 @@ class LoanApplicationTests {
 	public void deposit() throws Exception 
 	{
 		createAccount();
-		service.depositAmount("Tester@12",  300000);
 		double balance=service.depositAmount("Tester@12",  300000);
-		
-		assertEquals(600000, balance);
+		assertEquals(300000, balance);
 		
 	}
 	
@@ -97,7 +95,7 @@ class LoanApplicationTests {
 	public void validateApplyLoan() throws Exception
 	{
 		createAccount();
-		service.depositAmount("Tester@12",  300000);
+		service.depositAmount("Tester@12",  100000);
 		int loan_balance = service.applyLoan("Tester@12", 300000, 200000);
 		assertEquals(200000, loan_balance);
 	}

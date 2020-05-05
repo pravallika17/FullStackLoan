@@ -12,19 +12,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 
+//Global Exception Handling
 
 @ControllerAdvice
-public class ExceptionsController  extends ResponseEntityExceptionHandler {
+public class ExceptionHandlerControllerAdvice  extends ResponseEntityExceptionHandler {
 	
 
-	
-	@ExceptionHandler(HandlingException.class)
-	@ResponseStatus(value = HttpStatus.NOT_FOUND)
-	public @ResponseBody ExceptionResponse handleHandling(final HandlingException exception,final HttpServletRequest request) {
-		ExceptionResponse error = new ExceptionResponse(exception.getLocalizedMessage());
-		return error;
-	}
-	
+
 	@ExceptionHandler(InvalidLoginCredentialsException.class)
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
 	public @ResponseBody ExceptionResponse handleInvalidLoginCredentials(final InvalidLoginCredentialsException exception,final HttpServletRequest request) {
@@ -84,13 +78,6 @@ public class ExceptionsController  extends ResponseEntityExceptionHandler {
 		ExceptionResponse error = new ExceptionResponse(exception.getLocalizedMessage());
 		return error;
 	}
-	
-	@ExceptionHandler(NoDepositException.class)
-	@ResponseStatus(value = HttpStatus.NOT_FOUND)
-	public @ResponseBody ExceptionResponse handleNoDeposit(final NoEmiExistsException exception,final HttpServletRequest request) {
-		ExceptionResponse error = new ExceptionResponse(exception.getLocalizedMessage());
-		return error;
-	}
-	
+
 	
 }

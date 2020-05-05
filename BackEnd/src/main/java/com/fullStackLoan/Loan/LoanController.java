@@ -3,15 +3,12 @@ package com.fullStackLoan.Loan;
 import java.util.List;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,9 +29,13 @@ import com.fullStackLoan.Loan.service.LoanServiceImplementation;
 @RestController
 @RequestMapping("/api")
 public class LoanController {
+	
+	/*
+	 * Asking the autowired to create the instance of the bean
+	 */
 	@Autowired
 	LoanServiceImplementation service;
-	Logger logger=LoggerFactory.getLogger(LoanController.class);
+	
 	
 	//HTTP request for getting all the users
 	@GetMapping("/all")
@@ -42,6 +43,7 @@ public class LoanController {
 	{
 		return service.getAll();
 	}
+	
 	
 	//HTTP request for creating a new account
 	@PostMapping("/add")
@@ -58,12 +60,16 @@ public class LoanController {
 		return service.applyLoan(userName,assetVal,loanAmount);
 	}
 	
+	
+	
 	//HTTP request for getting balance details of the customer
 	@GetMapping("/get/{userName}")
 	public int showBalance(@PathVariable String userName)
 	{
 		return service.showBalance(userName);
 	}
+	
+	
 	
 	//HTTP request for calculating EMI for the customer
 	@GetMapping("/calculate/{userName}/{years}/{roi}")
@@ -72,6 +78,8 @@ public class LoanController {
 		return service.calculateEMI(userName,years,roi);
 	}
 
+	
+	
 	//HTTP request for paying EMI for customer
 	@GetMapping("/payEMI/{userName}")
 	public double payEMI(@PathVariable String userName) throws NoEmiExistsException, NoLoanExistsException 
@@ -79,11 +87,14 @@ public class LoanController {
 		return service.payEMI(userName);
 	}
 
+	
+	
 	//HTTP request for foreclosing the customer account
 	@GetMapping("/foreClose/{userName}")
 	public int foreClose(@PathVariable String userName) throws NoLoanExistsException {
 		return service.foreClose(userName);
 	}
+	
 	
 	
 	//HTTP request for getting transactions of a specific customer
@@ -93,13 +104,16 @@ public class LoanController {
 		return service.printTransactions(userName);
 	}
 
+	
+	
 	//HTTP request for checking Login Credentials
 	@GetMapping("/checkUser/{userName}/{password}")
 	public boolean checkUser(@PathVariable String userName,@PathVariable String password) throws InvalidLoginCredentialsException {
-		return  service.checkUser(userName,password);
-		
+		return  service.checkUser(userName,password);	
 	} 
 
+	
+	
 	//HTTP request for checking whether user name exists
 	@GetMapping("/userNameexists/{userName}")
 	public boolean userNameExists(@PathVariable String userName) throws UserNameAlreadyExistsException 
@@ -107,6 +121,8 @@ public class LoanController {
 		return service.userNameExists(userName);
 	}
 
+	
+	
 	//HTTP request for getting details of a specific Customer
 	@GetMapping("/getCust/{userName}")
 	public Customer getCustomer(@PathVariable String userName)
@@ -114,6 +130,8 @@ public class LoanController {
 		return service.getCustomer(userName);
 	}
 
+	
+	
 	//HTTP request for depositing amount
 	@GetMapping("/deposit/{userName}/{amount}")
 	public double depositAmount(@PathVariable String userName, @PathVariable double amount)
@@ -121,12 +139,8 @@ public class LoanController {
 		return service.depositAmount(userName, amount);
 	}
 	
-	//HTTP request for editing account
-	@PutMapping("/edit/{userName}")
-	public double editAccount( @RequestBody Customer customer)
-	{
-		return service.editAccount( customer);
-	}
+	
+	
 	//HTTP request for editing account
 	@DeleteMapping("/delete/{userName}")
 	public double deleteAccount(@PathVariable String userName )

@@ -1,14 +1,13 @@
 /* styling for top navigation */
-
-
-  .topnav2{
+  .topnav{
     background-color: darkblue;
     overflow: hidden;
     position:relative;
     
   
   }
-  .topnav2 a {
+  /* styling for top navigation links */
+  .topnav a {
     float: left;
     color: white;
     text-align: center;
@@ -17,15 +16,15 @@
     font-size: 20px;
     border:1;
   }
-  .topnav2 a:hover {
+  /* styling for top navigation links on hover */
+  .topnav a:hover {
     color:white;
     background-color: deeppink;
     width:30%
    
   }
-  
-  #nav2{
-    
+  /* Styling for specification heading */
+  #nav{
     margin-left: 18%;
     margin-right: 18%;
     display: flex;
